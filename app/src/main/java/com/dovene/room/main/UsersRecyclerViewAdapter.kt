@@ -10,13 +10,6 @@ import com.dovene.room.model.User
 
 class UsersRecyclerViewAdapter(var users: MutableList<User>, var deleteCallback: DeleteUserCallback): Adapter<UsersViewHolder>() {
 
-
-    fun setEssentials(essentials: MutableList<User>) {
-        this.users = essentials
-        // important to force list refresh
-        notifyDataSetChanged()
-    }
-
     override fun getItemCount(): Int {
         return  users.size
     }
