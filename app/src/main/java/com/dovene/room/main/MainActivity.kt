@@ -32,11 +32,15 @@ class MainActivity : AppCompatActivity() {
                 users.toMutableList(),
                 object : DeleteUserCallback {
                     override fun onDelete(user: User) {
-
+                        delete(user)
                     }
                 })
         binding.usersRv.layoutManager = LinearLayoutManager(this)
         binding.usersRv.adapter = usersRecyclerViewAdapter
+    }
+
+    private fun delete(user: User) {
+        viewModel.delete(user)
     }
 
     fun setViewItems(){

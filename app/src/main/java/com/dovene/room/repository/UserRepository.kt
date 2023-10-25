@@ -21,6 +21,10 @@ class UserRepository(context: Context) {
         AppDatabase.databaseWriteExecutor.execute { userDao.insert(user) }
     }
 
+    fun delete(user: User) {
+        AppDatabase.databaseWriteExecutor.execute { userDao.delete(user) }
+    }
+
     init {
         val db = AppDatabase.getDatabase(context = context)
         if (db != null) {

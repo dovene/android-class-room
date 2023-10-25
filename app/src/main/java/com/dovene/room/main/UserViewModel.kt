@@ -16,6 +16,10 @@ class UserViewModel(context: Context) : ViewModel() {
         userRepository.insert(user)
     }
 
+    fun delete(user: User) {
+        userRepository.delete(user)
+    }
+
     fun getAllUser():LiveData<List<User>>{
         return allUsers
     }
